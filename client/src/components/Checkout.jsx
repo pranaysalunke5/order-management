@@ -90,7 +90,7 @@ export default function Checkout({ cartItems, onOrderPlaced, onBack }) {
             type="text"
             value={form.name}
             onChange={handleNameChange}
-            placeholder="e.g. Priya Sharma"
+            placeholder="e.g. Pranay Salunke"
             className="w-full border border-line rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-saffron"
           />
           {errors.name && <p className="text-xs text-red-600 mt-1">{errors.name}</p>}

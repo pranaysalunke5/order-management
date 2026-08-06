@@ -51,7 +51,7 @@ export default function Cart({ cartItems, onIncrement, onDecrement, onRemove, on
 
       <div className="mt-5 pt-4 border-t border-line flex justify-between items-baseline">
         <span className="text-sm text-ink/60">Total</span>
-        <span className="font-mono text-lg font-semibold">${total.toFixed(2)}</span>
+        <span className="font-mono text-lg font-semibold">₹{total.toFixed(2)}</span>
       </div>
       <button
         onClick={onCheckout}
