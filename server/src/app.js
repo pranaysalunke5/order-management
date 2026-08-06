@@ -7,7 +7,14 @@ import orderEventsRoute from './routes/orderEventsRoute.js';
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    // 'https://YOUR-VERCEL-APP.vercel.app', // add after step 17e
+    'https://order-management-xi-blush.vercel.app/'
+  ],
+}));
 app.use(express.json());
 
 app.get('/api/health', (req, res) => {
