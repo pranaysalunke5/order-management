@@ -19,7 +19,7 @@ export default function Cart({ cartItems, onIncrement, onDecrement, onRemove, on
           <div key={item.id} className="flex items-center justify-between">
             <div className="min-w-0">
               <p className="font-medium text-sm truncate">{item.name}</p>
-              <p className="text-xs text-ink/50 font-mono">${item.price.toFixed(2)}</p>
+             <p className="text-xs text-ink/50 font-mono">₹{item.price.toFixed(2)}</p>
             </div>
 
             <div className="flex items-center gap-2 shrink-0">

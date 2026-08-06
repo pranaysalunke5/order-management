@@ -44,7 +44,7 @@ export default function MenuList({ onAddToCart }) {
             <div className="flex justify-between items-baseline gap-2">
               <h3 className="font-display text-lg leading-snug">{item.name}</h3>
               <span className="font-mono text-sm text-ink/70 shrink-0">
-                ${item.price.toFixed(2)}
+                ₹{item.price.toFixed(2)}
               </span>
             </div>
             <p className="text-sm text-ink/60 mt-1 leading-relaxed">

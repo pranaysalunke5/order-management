@@ -11,14 +11,17 @@ const cartItemSchema = z.object({
 });
 
 const deliveryDetailsSchema = z.object({
-  name: z.string().trim().min(1, 'name is required').max(100),
+  name: z
+    .string()
+    .trim()
+    .min(1, 'name is required')
+    .max(100)
+    .regex(/^[A-Za-z\s]+$/, 'name can only contain letters'),
   address: z.string().trim().min(1, 'address is required').max(300),
   phone: z
     .string()
     .trim()
-    .min(7, 'phone number is too short')
-    .max(20, 'phone number is too long')
-    .regex(/^[0-9+\-() ]+$/, 'phone number contains invalid characters'),
+    .regex(/^[0-9]{10}$/, 'phone must be exactly 10 digits'),
 });
 
 export const createOrderSchema = z.object({

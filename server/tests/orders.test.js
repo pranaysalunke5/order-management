@@ -5,9 +5,9 @@ import app from '../src/app';
 const validOrderPayload = {
   cartItems: [{ menuItemId: 'itm-001', quantity: 2 }],
   deliveryDetails: {
-    name: 'Jane Doe',
-    address: '123 Main St, Springfield',
-    phone: '+1 555-123-4567',
+    name: 'Pranay Salunke',
+    address: '123 Pune',
+    phone: '1234567890',
   },
 };
 

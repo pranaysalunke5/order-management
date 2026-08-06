@@ -83,13 +83,13 @@ export default function OrderStatus({ order: initialOrder, onNewOrder }) {
                   {item.quantity}× {item.name}
                 </span>
                 <span className="font-mono text-ink/70">
-                  ${item.subtotal.toFixed(2)}
+                  ₹{item.subtotal.toFixed(2)}
                 </span>
               </div>
             ))}
             <div className="flex justify-between font-semibold pt-2 mt-2 border-t border-line">
               <span>Total</span>
-              <span className="font-mono">${order.total.toFixed(2)}</span>
+              <span className="font-mono">₹{order.total.toFixed(2)}</span>
             </div>
           </div>
 
