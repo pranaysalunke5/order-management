@@ -150,7 +150,7 @@ export default function App() {
 
       {view === 'status' && placedOrder && (
         <div className="max-w-lg mx-auto p-6">
-          <p className="font-display text-2xl">Order placed! (status screen next step)</p>
+          <p className="font-display text-2xl">Order placed!</p>
           <p className="text-sm text-ink/50 mt-2 font-mono">#{placedOrder.id}</p>
         </div>
       )}
