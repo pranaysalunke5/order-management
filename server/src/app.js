@@ -11,8 +11,10 @@ const PORT = process.env.PORT || 4000;
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    // 'https://YOUR-VERCEL-APP.vercel.app', // add after step 17e
-    'https://order-management-xi-blush.vercel.app/'
+    // 'https://YOUR-VERCEL-APP.vercel.app',
+    // 'https://order-management-xi-blush.vercel.app/'
+    'https://order-management-xi-blush.vercel.app'
+
   ],
 }));
 app.use(express.json());
