@@ -56,22 +56,22 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-paper">
-      <header className="sticky top-0 z-20 bg-ink text-paper">
+      <header className="sticky top-0 z-20 bg-ink/95 backdrop-blur-sm text-paper border-b border-white/5">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <button
             onClick={() => setView('shop')}
-            className="font-display text-2xl tracking-tight"
+            className="font-display text-2xl tracking-tight hover:text-saffron transition-colors"
           >
-           FoodPanda
+            FoodPanda
           </button>
           {view === 'shop' && (
             <button
               onClick={() => setCartOpen(true)}
-              className="relative flex items-center gap-2 border border-white/20 rounded-full px-4 py-2 text-sm font-medium hover:bg-white/10 transition"
+              className="relative flex items-center gap-2 border border-white/15 rounded-full px-4 py-2 text-sm font-medium hover:bg-white/10 hover:border-white/25 transition-all"
             >
               Cart
               {itemCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-saffron text-ink text-xs font-mono font-semibold w-5 h-5 rounded-full flex items-center justify-center">
+                <span className="absolute -top-2 -right-2 bg-saffron text-ink text-xs font-mono font-semibold w-5 h-5 rounded-full flex items-center justify-center animate-[pop_0.25s_ease]">
                   {itemCount}
                 </span>
               )}

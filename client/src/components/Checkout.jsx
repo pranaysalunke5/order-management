@@ -69,84 +69,91 @@ export default function Checkout({ cartItems, onOrderPlaced, onBack }) {
   }
 
   return (
-    <div className="max-w-lg mx-auto p-4">
-      <button onClick={onBack} className="text-sm text-ink/60 hover:text-ink mb-4">
-        &larr; Back to cart
+    <div className="max-w-lg mx-auto p-4 sm:p-6">
+      <button
+        onClick={onBack}
+        className="text-sm text-ink/50 hover:text-ink transition-colors mb-6 flex items-center gap-1"
+      >
+        ← Back to cart
       </button>
 
-      <h2 className="font-display text-2xl mb-1">Delivery details</h2>
-      <p className="text-sm text-ink/50 mb-6">
-        {cartItems.length} item{cartItems.length !== 1 ? 's' : ''} · ₹
-        {total.toFixed(2)}
-      </p>
+      <div className="card-elevate bg-white rounded-2xl p-6 sm:p-8">
+        <h2 className="font-display text-2xl mb-1">Delivery details</h2>
+        <p className="text-sm text-ink/50 mb-6">
+          {cartItems.length} item{cartItems.length !== 1 ? 's' : ''} · ₹{total.toFixed(2)}
+        </p>
 
-      <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-        <div>
-          <label className="block text-sm font-medium mb-1" htmlFor="name">
-            Full name
-          </label>
-          <input
-            id="name"
-            type="text"
-            value={form.name}
-            onChange={handleNameChange}
-            placeholder="e.g. Pranay Salunke"
-            className="w-full border border-line rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-saffron"
-          />
-          {errors.name && <p className="text-xs text-red-600 mt-1">{errors.name}</p>}
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium mb-1" htmlFor="address">
-            Delivery address
-          </label>
-          <textarea
-            id="address"
-            rows={2}
-            value={form.address}
-            onChange={(e) => updateField('address', e.target.value)}
-            placeholder="Flat / House no., Street, Area, City"
-            className="w-full border border-line rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-saffron resize-none"
-          />
-          {errors.address && <p className="text-xs text-red-600 mt-1">{errors.address}</p>}
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium mb-1" htmlFor="phone">
-            Phone number
-          </label>
-          <div className="flex items-center border border-line rounded-lg focus-within:ring-2 focus-within:ring-saffron">
-            <span className="pl-3 pr-2 text-sm text-ink/50 font-mono border-r border-line py-2.5">
-              +91
-            </span>
+        <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+          <div>
+            <label className="block text-sm font-medium mb-1.5" htmlFor="name">
+              Full name
+            </label>
             <input
-              id="phone"
-              type="tel"
-              inputMode="numeric"
-              value={form.phone}
-              onChange={handlePhoneChange}
-              placeholder="98765 43210"
-              maxLength={10}
-              className="w-full px-3 py-2.5 text-sm focus:outline-none"
+              id="name"
+              type="text"
+              value={form.name}
+              onChange={handleNameChange}
+              placeholder="e.g. Pranay Salunke"
+              className="w-full border border-line rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-saffron focus:border-transparent transition-shadow"
             />
+            {errors.name && <p className="text-xs text-red-600 mt-1.5">{errors.name}</p>}
           </div>
-          {errors.phone && <p className="text-xs text-red-600 mt-1">{errors.phone}</p>}
-        </div>
 
-        {submitError && (
-          <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
-            {submitError}
-          </p>
-        )}
+          <div>
+            <label className="block text-sm font-medium mb-1.5" htmlFor="address">
+              Delivery address
+            </label>
+            <textarea
+              id="address"
+              rows={2}
+              value={form.address}
+              onChange={(e) => updateField('address', e.target.value)}
+              placeholder="Flat / House no., Street, Area, City"
+              className="w-full border border-line rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-saffron focus:border-transparent resize-none transition-shadow"
+            />
+            {errors.address && <p className="text-xs text-red-600 mt-1.5">{errors.address}</p>}
+          </div>
 
-        <button
-          type="submit"
-          disabled={submitting}
-          className="w-full bg-ink text-paper rounded-full py-3 text-sm font-medium hover:bg-ink/90 transition disabled:opacity-50"
-        >
-          {submitting ? 'Placing order…' : `Place order · ₹${total.toFixed(2)}`}
-        </button>
-      </form>
+          <div>
+            <label className="block text-sm font-medium mb-1.5" htmlFor="phone">
+              Phone number
+            </label>
+            <div className="flex items-center border border-line rounded-xl focus-within:ring-2 focus-within:ring-saffron transition-shadow overflow-hidden">
+              <span className="pl-4 pr-3 text-sm text-ink/50 font-mono border-r border-line py-3">
+                +91
+              </span>
+              <input
+                id="phone"
+                type="tel"
+                inputMode="numeric"
+                value={form.phone}
+                onChange={handlePhoneChange}
+                placeholder="98765 43210"
+                maxLength={10}
+                className="w-full px-4 py-3 text-sm focus:outline-none"
+              />
+            </div>
+            {errors.phone && <p className="text-xs text-red-600 mt-1.5">{errors.phone}</p>}
+          </div>
+
+          {submitError && (
+            <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+              {submitError}
+            </p>
+          )}
+
+          <button
+            type="submit"
+            disabled={submitting}
+            className="w-full bg-ink text-paper rounded-full py-3.5 text-sm font-medium hover:bg-saffron hover:text-ink transition-colors duration-200 disabled:opacity-50 disabled:hover:bg-ink disabled:hover:text-paper flex items-center justify-center gap-2"
+          >
+            {submitting && (
+              <span className="w-4 h-4 border-2 border-paper/40 border-t-paper rounded-full animate-spin" />
+            )}
+            {submitting ? 'Placing order…' : `Place order · ₹${total.toFixed(2)}`}
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
