@@ -53,7 +53,6 @@ export default function Cart({ cartItems, onIncrement, onDecrement, onRemove, on
         <span className="text-sm text-ink/60">Total</span>
         <span className="font-mono text-lg font-semibold">${total.toFixed(2)}</span>
       </div>
-
       <button
         onClick={onCheckout}
         className="mt-4 w-full bg-ink text-paper rounded-full py-3 text-sm font-medium hover:bg-ink/90 transition"
