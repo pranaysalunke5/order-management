@@ -3,12 +3,16 @@ export default function Cart({ cartItems, onIncrement, onDecrement, onRemove, on
 
   if (cartItems.length === 0) {
     return (
-      <div className="card-elevate p-6 rounded-2xl bg-white text-center">
-        <div className="w-12 h-12 rounded-full bg-paper border border-line mx-auto mb-3 flex items-center justify-center text-xl">
-          🛒
-        </div>
-        <h2 className="font-display text-lg mb-1">Your cart is empty</h2>
-        <p className="text-ink/50 text-sm">Add something tasty from the menu.</p>
+      <div className="card-elevate p-5 rounded-2xl bg-white text-center">
+        <div className="text-4xl mb-3">🛒</div>
+
+        <h2 className="font-display text-xl">
+          Nothing here yet
+        </h2>
+
+        <p className="text-sm text-ink/60 mt-2">
+          Add something tasty from the menu.
+        </p>
       </div>
     );
   }

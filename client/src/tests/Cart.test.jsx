@@ -22,7 +22,7 @@ describe('Cart', () => {
 
   it('calculates and displays the correct total', () => {
     render(<Cart cartItems={items} onIncrement={vi.fn()} onDecrement={vi.fn()} onRemove={vi.fn()} onCheckout={vi.fn()} />);
-    expect(screen.getByText('$28.47')).toBeInTheDocument();
+    expect(screen.getByText('₹28.47')).toBeInTheDocument();
   });
 
   it('calls onIncrement with the correct item id', async () => {
